@@ -1,0 +1,33 @@
+{% extends 'scrapper/base.html' %}
+
+{% block title %}Scraping Results{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2>Scraped Results</h2>
+        <h3>Summary</h3>
+        <p>{{ summary }}</p>
+
+        <h3>Links</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Link Name</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, link in links %}
+                    <tr>
+                        <td>{{ name|default:"No Name" }}</td>
+                        <td><a href="{{ link }}" target="_blank">{{ link }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{% url 'download_pdf' %}" class="btn btn-success mt-3">Download Summary as PDF</a>
+    </div>
+</div>
+{% endblock %}

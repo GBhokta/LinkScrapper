@@ -1,0 +1,16 @@
+{% extends 'scrapper/base.html' %}
+
+{% block title %}Submit a URL{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2>Enter a URL to Scrape</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Scrape</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

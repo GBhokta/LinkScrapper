@@ -1,0 +1,10 @@
+Django==3.0
+requests
+beautifulsoup4
+lxml
+newspaper3k
+pandas
+reportlab
+weasyprint
+
+venv/scripts/activate
